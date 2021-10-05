@@ -25,7 +25,7 @@ urlpatterns = [
     path('', show_places),
     path('places/', include('places.urls')),
     path('tinymce/', include('tinymce.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += [
     path('', RedirectView.as_view(url='/places/', permanent=True)),

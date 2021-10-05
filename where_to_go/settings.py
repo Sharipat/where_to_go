@@ -22,6 +22,8 @@ STATICFILES_DIRS = [
     'static/',
 ]
 
+STATIC_ROOT = os.getenv('STATIC_ROOT')
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -126,6 +128,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = os.getenv('STATIC_URL')
+
+MEDIA_ROOT = os.getenv('MEDIA_ROOT')
+
+MEDIA_URL = os.getenv('MEDIA_URL')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
