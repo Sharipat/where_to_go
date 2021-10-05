@@ -22,11 +22,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', show_places)
-
-]
-urlpatterns += [
+    path('', show_places),
     path('places/', include('places.urls')),
+    path('tinymce/', include('tinymce.urls')),
 ]
 
 urlpatterns += [
