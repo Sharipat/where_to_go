@@ -1,5 +1,6 @@
 from django.db import models
 from tinymce import models as tinymce_models
+import os
 
 
 class Place(models.Model):
@@ -8,6 +9,7 @@ class Place(models.Model):
     description_long = tinymce_models.HTMLField(verbose_name='Полное описание')
     longitude = models.FloatField(verbose_name='Долгота')
     latitude = models.FloatField(verbose_name='Ширина')
+    json_path = models.FilePathField(path=os.path.join('static/places/'), default='',  verbose_name='Адрес json файла')
 
     def __str__(self):
         return self.title

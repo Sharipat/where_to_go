@@ -43,37 +43,7 @@
             width: 100px;
         }
     </style>
-    <script id="places-geojson" type="application/json">
-    {
-      "type": "FeatureCollection",
-      "features": [
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [37.62, 55.793676]
-          },
-          "properties": {
-            "title": "«Легенды Москвы",
-            "placeId": "moscow_legends",
-            "detailsUrl": "..{%  static 'places/moscow_legends.json' %}"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [37.64, 55.753676]
-          },
-          "properties": {
-            "title": "Крыши24.рф",
-            "placeId": "roofs24",
-            "detailsUrl":"..{%  static 'places/roofs24.json' %}"
-          }
-        }
-      ]
-    }
-  </script>
+    {{ place_json|json_script:"places-geojson" }}
 
     <script id="app-template" type="text/template">
         <div v-bind:class="{'sidebar-content': 1, 'bg-white': selectedPlace, 'bg-secondary': !selectedPlace}">
@@ -147,11 +117,12 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
 
- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-            crossorigin=""></script>
-  <script src="http://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.10.1/leaflet-providers.min.js" integrity="sha256-EV/ywRtxUOBICwOsLtPpYEONoBF6g+ShAcLX1Ts48GA=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+<script src="http://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.10.1/leaflet-providers.min.js"
+        integrity="sha256-EV/ywRtxUOBICwOsLtPpYEONoBF6g+ShAcLX1Ts48GA=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/leaflet-control-custom@1.0.0/Leaflet.Control.Custom.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/loglevel/1.6.8/loglevel.min.js"
