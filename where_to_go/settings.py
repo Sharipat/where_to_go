@@ -23,18 +23,18 @@ STATICFILES_DIRS = [
     'static/',
 ]
 
-STATIC_ROOT = os.getenv('STATIC_ROOT')
+STATIC_ROOT = os.getenv('STATIC_ROOT', 'None')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY', 'RePLaCe_Me')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
+DEBUG = os.getenv('DEBUG', False)
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '[]')
 
 # Application definition
 
@@ -124,11 +124,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = os.getenv('STATIC_URL')
+STATIC_URL = os.getenv('STATIC_URL', '/static/')
 
-MEDIA_ROOT = os.getenv('MEDIA_ROOT')
+MEDIA_ROOT = os.getenv('MEDIA_ROOT', 'media')
 
-MEDIA_URL = os.getenv('MEDIA_URL')
+MEDIA_URL = os.getenv('MEDIA_URL', '/media/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
