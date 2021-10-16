@@ -12,18 +12,19 @@
 
 ```
 git clone https://github.com/Shirlusha/where_to_go.git
-- ```
+```
+
 
 - Установите зависимости командой `pip install -r requirements.txt`
 - Создайте файл `.env` и внесите в него переменные окружения. Для тестирования работоспособности, код работает и без их
   заполнения.
 - Создайте файл базы данных и сразу примените все миграции командой `python3 manage.py migrate`
 - Запустите сервер командой `python3 manage.py runserver`
-- Загрузите нужные вам локации запуском скрипта `load_place`, в качестве обязательного аргумента - полноая ссылка на
+- Загрузите нужные вам локации запуском скрипта `load_place`, в качестве обязательного аргумента - полная ссылка на
   файл с данными локации, к примеру:
 
 ```
-$ python3 manage.py load_place https://raw.githubusercontent.com/devmanorg/where-to-go-places/master/places/%D0%90%D0%BD%D1%82%D0%B8%D0%BA%D0%B0%D1%84%D0%B5%20Bizone.json
+python3 manage.py load_place https://raw.githubusercontent.com/devmanorg/where-to-go-places/master/places/%D0%90%D0%BD%D1%82%D0%B8%D0%BA%D0%B0%D1%84%D0%B5%20Bizone.json
 
 ```
 
