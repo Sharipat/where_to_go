@@ -12,6 +12,7 @@ def show_places(request):
         "type": "FeatureCollection",
         "features": []
     }
+
     for place in places:
         place_json["features"].append({
             "type": "Feature",
@@ -40,8 +41,8 @@ def place_view(request, place_id):
         "description_short": place.description_short,
         "description_long": place.description_long,
         "coordinates": {
+            "lng": place.longitude,
             "lat": place.latitude,
-            "lng": place.longitude
         }
     }
     return JsonResponse(json_response, json_dumps_params={"ensure_ascii": False, 'indent': 4}, safe=False)

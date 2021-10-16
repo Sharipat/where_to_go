@@ -9,7 +9,7 @@ class Place(models.Model):
     description_short = models.TextField(max_length=400, verbose_name='Краткое описание')
     description_long = tinymce_models.HTMLField(verbose_name='Полное описание')
     longitude = models.FloatField(verbose_name='Долгота')
-    latitude = models.FloatField(verbose_name='Ширина')
+    latitude = models.FloatField(verbose_name='Широта')
 
     class Meta:
         ordering = ['title']

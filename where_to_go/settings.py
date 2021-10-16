@@ -18,10 +18,7 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    'places/static/',
-]
+
 
 STATIC_ROOT = os.getenv('STATIC_ROOT', 'None')
 
@@ -123,7 +120,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = os.getenv('STATIC_URL', '/static/')
+STATIC_URL = os.getenv('STATIC_URL', 'places/static/')
 
 MEDIA_ROOT = os.getenv('MEDIA_ROOT', 'media')
 
