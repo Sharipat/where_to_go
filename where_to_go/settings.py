@@ -19,7 +19,6 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
 STATIC_ROOT = os.getenv('STATIC_ROOT', 'None')
 
 # Quick-start development settings - unsuitable for production
