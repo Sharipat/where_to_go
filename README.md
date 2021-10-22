@@ -42,7 +42,7 @@ python3 manage.py load_place https://raw.githubusercontent.com/devmanorg/where-t
 Для тестирования админ-панели можно перейти по [ссылке](http://shirlex.pythonanywhere.com/admin/) и ввести уже готовые
 логин и пароль:
 
-**Username:** `admin123`
+**Username:** `admin385`
 
 **Password:** `Password321@`
 
@@ -77,7 +77,7 @@ python3 manage.py createsuperuser
 - `STATIC_URL`
   — [смотри документацию Django, по умолчанию 'places/static/'](https://docs.djangoproject.com/en/3.2/ref/settings/#static-url)
 - `STATIC_ROOT`
-  — [смотри документацию Django, по умолчанию None](https://docs.djangoproject.com/en/3.2/ref/settings/#static-root)
+  — [смотри документацию Django](https://docs.djangoproject.com/en/3.2/ref/settings/#static-root)
 - `MEDIA_URL`
   — [смотри документацию Django, по умолчанию /media/'](https://docs.djangoproject.com/en/3.2/ref/settings/#std:setting-MEDIA_URL)
 - `MEDIA_ROOT`
