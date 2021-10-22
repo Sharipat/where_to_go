@@ -2,7 +2,7 @@
 
 Сайт с метками и описанием самых интересных мест в Москве. Авторский проект Артёма.
 
-[Пример запуска сайта](/http://shirlex.pythonanywhere.com/)
+[Пример запуска сайта](http://shirlex.pythonanywhere.com/)
 
 [Пример админ-панели](http://shirlex.pythonanywhere.com/admin/)
 
