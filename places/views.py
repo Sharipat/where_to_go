@@ -28,7 +28,7 @@ def show_places(request):
 
         )
 
-    return render(request, 'index.html', context={'place_json': place_json})
+    return render(request, 'index.html', context={'serialized_place': serialized_place})
 
 
 def place_view(request, place_id):

@@ -8,10 +8,10 @@ from places.models import Place, Image
 
 class Command(BaseCommand):
     def add_arguments(self, parser):
-        parser.add_argument('place_json', nargs='+', type=str)
+        parser.add_argument('serialized_place', nargs='+', type=str)
 
     def handle(self, *args, **options):
-        for place_link in options['place_json']:
+        for place_link in options['serialized_place']:
             json_response = requests.get(place_link.strip())
             json_response.raise_for_status()
             if not json_response.ok:
