@@ -8,13 +8,13 @@ from .models import Place
 def show_places(request):
     places = Place.objects.all()
 
-    place_json = {
+    serialized_place = {
         "type": "FeatureCollection",
         "features": []
     }
 
     for place in places:
-        place_json["features"].append({
+        serialized_place["features"].append({
             "type": "Feature",
             "geometry": {
                 "type": "Point",
