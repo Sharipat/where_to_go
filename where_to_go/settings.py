@@ -28,7 +28,7 @@ STATIC_ROOT = os.getenv('STATIC_ROOT', 'static')
 SECRET_KEY = os.getenv('SECRET_KEY', 'RePLaCe_Me')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', True)
+DEBUG = os.getenv('DEBUG', False)
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', ['127.0.0.1', 'shirlex.pythonanywhere.com'])
 # Application definition
