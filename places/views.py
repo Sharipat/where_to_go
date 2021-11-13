@@ -34,10 +34,10 @@ def show_places(request):
 def place_view(request, place_id):
     place = get_object_or_404(Place, pk=place_id)
     place_images = place.images.all()
-    image_url = [place_image.image.url for place_image in place_images]
+    image_urls = [place_image.image.url for place_image in place_images]
     context = {
         "title": place.title,
-        "imgs": image_url,
+        "imgs": image_urls,
         "description_short": place.description_short,
         "description_long": place.description_long,
         "coordinates": {
