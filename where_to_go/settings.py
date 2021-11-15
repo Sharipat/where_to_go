@@ -11,13 +11,15 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
-
+from environs import Env
 from dotenv import load_dotenv
+
+env = Env()
+env.read_env()
 
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 STATIC_ROOT = os.getenv('STATIC_ROOT', 'static')
 
@@ -28,7 +30,7 @@ STATIC_ROOT = os.getenv('STATIC_ROOT', 'static')
 SECRET_KEY = os.getenv('SECRET_KEY', 'RePLaCe_Me')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
+DEBUG = env.bool('DEBUG', False)
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', ['127.0.0.1', 'shirlex.pythonanywhere.com'])
 # Application definition
