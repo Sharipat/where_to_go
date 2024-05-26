@@ -1,90 +1,90 @@
-## Сайт "Куда пойти — Москва глазами Артёма"
+## Website "Where to go - Moscow through the eyes of Artyom"
 
-Сайт с метками и описанием самых интересных мест в Москве. Авторский проект Артёма.
+A site with tags and descriptions of the most interesting places in Moscow. Artyom's original project.
 
-[Пример запуска сайта](http://shirlex.pythonanywhere.com/)
+[Site launch example](http://shirlex.pythonanywhere.com/)
 
-[Пример админ-панели](http://shirlex.pythonanywhere.com/admin/)
+[Admin Panel Example](http://shirlex.pythonanywhere.com/admin/)
 
-## Запуск
+## Launch
 
-- Скачайте репозиторий с Github:
-
-```
-git clone https://github.com/Shirlusha/where_to_go.git
-```
-
-
-- Установите зависимости командой `pip install -r requirements.txt`
-- Создайте файл `.env` и внесите в него переменные окружения. Для тестирования работоспособности, код работает и без их
-  заполнения.
-- Создайте файл базы данных и сразу примените все миграции командой `python3 manage.py migrate`
-- Запустите сервер командой `python3 manage.py runserver`
-- Загрузите нужные вам локации запуском скрипта `load_place` в формате 
-`python3 manage.py load_place <полная ссылка на файл json с данными o локации>`
-
-  К примеру:
+- Download the repository from Github:
 
 ```
-python3 manage.py load_place https://raw.githubusercontent.com/devmanorg/where-to-go-places/master/places/%D0%90%D0%BD%D1%82%D0%B8%D0%BA%D0%B0%D1%84%D0%B5%20Bizone.json
+git clone https://github.com/Sharipat/where_to_go.git
+```
+
+
+- Install dependencies with the command `pip install -r requirements.txt`
+- Create a `.env` file and add environment variables to it. To test functionality, the code works without them
+   filling.
+- Create a database file and apply all migrations at once with the command `python3 manage.py migrate`
+- Start the server with the command `python3 manage.py runserver`
+- Load the locations you need by running the `load_place` script in the format 
+`python3 manage.py load_place <full link to the json file with location data>`
+
+   Eg:
+
+```
+python3 manage.py load_place https://raw.githubusercontent.com/devmanorg/where-to-go-places/master/places/%D0%90%D0%BD%D1%82%D0%B8%D0%BA% D0%B0%D1%84%D0%B5%20Bizone.json
 
 ```
 
-## Пример использования сайта
+## Example of using the site
 
-Карта позволяет изменять масштаб, показывает описание и фото локации, а также по некоторым локациям можно пройти по
-ссылкам на сайт или соцсети данной локации
+The map allows you to change the scale, shows a description and photo of the location, and you can also walk through some locations
+links to the website or social networks of this location
 
 ![screenshot](screenshots/place-usage.gif)
 
-## Работа с админ-панелью
+## Working with the admin panel
 
-Для тестирования админ-панели можно перейти по [ссылке](http://shirlex.pythonanywhere.com/admin/) и ввести уже готовые
-логин и пароль:
+To test the admin panel, you can go to [link](http://shirlex.pythonanywhere.com/admin/) and enter ready-made
+login and password:
 
 **Username:** `admin385`
 
 **Password:** `Password321@`
 
-Для дальнейшего создания своего пользователя на локальной машине, воспользуйтесь командой:
+To further create your user on the local machine, use the command:
 
 ```
 python3 manage.py createsuperuser
 ```
 
-Залогинившись в админ-панели, можно создать новую или отредактировать старую локацию, нажав на **Места**
+By logging into the admin panel, you can create a new or edit an old location by clicking on **Locations**
 
 ![screenshot](screenshots/admin-place.gif)
 
-Для создания новой локации, нажмите **Add Место**
+To create a new location, click **Add Location**
 
 ![screenshot](screenshots/create-place.gif)
 
-В режиме редактирования можно менять текст, координаты локаций, добавлять и удалять фотографии, а также менять их
-положение при отображении на сайте, путем перетаскивания фоток курсором мышки:
+In editing mode, you can change text, location coordinates, add and delete photos, and also change them
+position when displayed on the site, by dragging the photos with the mouse cursor:
 ![screenshot](screenshots/change-photo.gif)
 
-## Переменные окружения
+## Environment variables
 
-Часть настроек проекта берётся из переменных окружения. Чтобы их определить, создайте файл `.env` рядом с `manage.py` и
-запишите туда данные в таком формате: `ПЕРЕМЕННАЯ=значение`.
+Some of the project settings are taken from environment variables. To define them, create a `.env` file next to `manage.py` and
+write the data there in the following format: `VARIABLE=value`.
 
-Доступны переменные:
+Variables available:
 
-- `DEBUG` — дебаг-режим. Поставьте True, чтобы увидеть отладочную информацию в случае ошибки.
-- `SECRET_KEY` — секретный ключ проекта
-- `ALLOWED_HOSTS` — смотри [документацию Django](https://docs.djangoproject.com/en/3.2/ref/settings/#allowed-hosts).
+- `DEBUG` - debug mode. Set to True to see debugging information in case of an error.
+- `SECRET_KEY` — secret key of the project
+- `ALLOWED_HOSTS` - see [Django documentation](https://docs.djangoproject.com/en/5.1/ref/settings/#allowed-hosts).
 - `STATIC_URL`
-  — [смотри документацию Django, по умолчанию 'places/static/'](https://docs.djangoproject.com/en/3.2/ref/settings/#static-url)
+   — [see Django documentation, default is 'places/static/'](https://docs.djangoproject.com/en/5.1/ref/settings/#static-url)
 - `STATIC_ROOT`
-  — [смотри документацию Django](https://docs.djangoproject.com/en/3.2/ref/settings/#static-root)
+   — [see Django documentation](https://docs.djangoproject.com/en/5.1/ref/settings/#static-root)
 - `MEDIA_URL`
-  — [смотри документацию Django, по умолчанию /media/'](https://docs.djangoproject.com/en/3.2/ref/settings/#std:setting-MEDIA_URL)
+   - [see Django documentation, default is /media/'](https://docs.djangoproject.com/en/5.1/ref/settings/#std:setting-MEDIA_URL)
 - `MEDIA_ROOT`
-  — [смотри документацию Django, по умолчанию 'media'](https://docs.djangoproject.com/en/3.2/ref/settings/#std:setting-MEDIA_ROOT)
+   — [see Django documentation, default is 'media'](https://docs.djangoproject.com/en/5.1/ref/settings/#std:setting-MEDIA_ROOT)
 
-## Цели проекта
+## Project goals
 
-Код написан в учебных целях — это урок в курсе по Python и веб-разработке на сайте [Devman](https://dvmn.org).
+The code is written for educational purposes - this is a lesson in the course on Python and web development on the site [Devman](https://dvmn.org).
 
-Тестовые данные взяты с сайта [KudaGo](https://kudago.com).
+Test data taken from the website [KudaGo](https://kudago.com).
